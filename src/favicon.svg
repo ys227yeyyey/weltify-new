@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#F7F7F4"/>
+  <text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Newsreader, 'Times New Roman', Georgia, serif"
+        font-size="44" font-weight="500" font-style="normal"
+        letter-spacing="-0.01em" fill="#0E0E10">W</text>
+</svg>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>直近の計画まとめ — Weltify</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --ink: #1a1d24;
+      --sub: #5b6472;
+      --line: #e3e6eb;
+      --accent: #2563eb;
+      --accent-soft: #eef3ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.8;
+      padding: 48px 20px;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      letter-spacing: .02em;
+    }
+
+    .date {
+      color: var(--sub);
+      font-size: .9rem;
+      margin-top: 4px;
+    }
+
+    .premise {
+      background: var(--accent-soft);
+      border: 1px solid #d4e0ff;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-weight: 600;
+    }
+
+    .premise span {
+      color: var(--accent);
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 620px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card .tag {
+      display: inline-block;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 12px;
+    }
+
+    .card .label {
+      font-size: .82rem;
+      color: var(--sub);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card .approach {
+      font-size: .95rem;
+    }
+
+    .note {
+      margin-top: 28px;
+      background: var(--card);
+      border: 1px dashed var(--line);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: .92rem;
+      color: var(--sub);
+    }
+
+    .note strong {
+      color: var(--ink);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>直近の計画まとめ</h1>
+      <div class="date">2026-05-14</div>
+    </header>
+
+    <div class="premise">
+      大前提：まずは <span>waitlist への登録</span> を目指す段階。
+    </div>
+
+    <section>
+      <h2>東京に来る人を 2 タイプに分ける</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">タイプ 1</span>
+          <h3>個人で東京に来る人</h3>
+          <div class="label">アプローチ</div>
+          <p class="approach">
+            個人で日本に来そうな人が集まる海外団体に連絡し、団体内で waitlist の URL と登録勧誘文を流してもらうよう打診する。
+          </p>
+        </div>
+        <div class="card">
+          <span class="tag">タイプ 2</span>
+          <h3>出張・留学で東京に来る人</h3>
+          <div class="label">アプローチ</div>
+          <p class="approach">
+            日本側の大学・語学学校などに、waitlist の URL と登録勧誘文を流してもらうよう打診する。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="note">
+      <strong>ポスター形式の場合：</strong>別途作成し、URL は QR コードとする。
+    </div>
+  </div>
+</body>
+
+</html>

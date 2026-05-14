@@ -1,0 +1,20 @@
+Subject: A trusted local in Tokyo for your community's travelers
+
+Dear {担当者名 / team at {団体名}},
+
+My name is Shintaro, founder of Weltify — a service that connects travelers in Tokyo with reliable local support when they need it most.
+
+{Weltifyとの関連理由を1文}
+
+I started Weltify because of a personal experience I can't forget. While staying in Berlin, I fell ill — with no one to turn to and no reliable information on what to do. That fear never left me, and it shouldn't be anyone's story. So I decided to build the service I wish had existed for me, starting in Tokyo.
+
+We are currently building our waitlist of early users. It would mean a great deal to us if you could share our waitlist link with {団体名}'s community — whether through a newsletter, Slack, or a quick mention to the team. Even one recommendation from a trusted organization like yours goes a long way.
+
+Waitlist: https://weltifywaitlist.netlify.app/
+
+Thank you for your time. I would be happy to share more about what we're building if you're ever curious.
+
+Warm regards,
+Shintaro
+Welt Path
+weltifyteam@gmail.com
