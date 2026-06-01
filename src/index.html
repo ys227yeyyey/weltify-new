@@ -5,48 +5,52 @@
 <title>Weltify — Trusted locals to turn to when you get sick in Tokyo</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
-<meta name="description" content="A trusted Tokyo local on WhatsApp before and during your trip — for the moment you get sick and don't know what to do. Join the waitlist.">
-<meta name="theme-color" content="#0E0E10">
+<meta name="description" content="A trusted Tokyo local on WhatsApp during your trip — for the moment you get sick and don't know what to do here in Tokyo. Join the waitlist.">
+<meta name="theme-color" content="#0E1F33">
 <link rel="canonical" href="https://weltify.jp/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Weltify">
 <meta property="og:title" content="Trusted locals to turn to when you get sick in Tokyo">
-<meta property="og:description" content="A trusted Tokyo local on WhatsApp before and during your trip — for the moment you get sick and don't know what to do.">
-<meta property="og:image" content="https://raw.githubusercontent.com/ys227yeyyey/weltify-assets/main/og-image.png">
+<meta property="og:description" content="A trusted Tokyo local on WhatsApp during your trip — for the moment you get sick and don't know what to do here in Tokyo.">
+<meta property="og:image" content="https://weltifywaitlist.netlify.app/og-image-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://weltify.jp/">
+<meta property="og:url" content="https://weltifywaitlist.netlify.app/">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Trusted locals to turn to when you get sick in Tokyo">
-<meta name="twitter:description" content="A trusted Tokyo local on WhatsApp before and during your trip — for the moment you get sick and don't know what to do.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/ys227yeyyey/weltify-assets/main/og-image.png">
+<meta name="twitter:description" content="A trusted Tokyo local on WhatsApp during your trip — for the moment you get sick and don't know what to do here in Tokyo.">
+<meta name="twitter:image" content="https://weltifywaitlist.netlify.app/og-image-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F7F7F4;
-    --ink: #0E0E10;
-    --muted: #6E6E72;
-    --rule: #E5E2DA;
+    --bg: #EEF4FA;
+    --ink: #0E1F33;
+    --muted: #5B7088;
+    --rule: #DCE6F0;
     --gray: #D9D6CE;
-    --amber: #D49A5C;
+    --blue: #1565C0;
+    --blue-soft: #E3EDFF;
+    --amber: #D49A5C; /* retained for phone illustration only */
     --bubble-them: #EFECE5;
     --bubble-us: #2C2C2E;
     --card: #FFFFFF;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  html, body { background: radial-gradient(120% 80% at 85% -5%, #F4F9FF, var(--bg) 55%); color: var(--ink); -webkit-font-smoothing: antialiased; }
   body { font-family: 'Inter', system-ui, sans-serif; font-size: 16px; line-height: 1.55; }
 
   .banner { background: var(--ink); color: #F4F1EA; text-align: center; font-size: 13px; padding: 11px 16px; letter-spacing: 0.01em; }
-  .banner .dot { color: var(--amber); margin-right: 6px; }
+  .banner .dot { color: var(--blue-soft); margin-right: 6px; }
   .banner .sep { color: rgba(244,241,234,0.45); margin: 0 10px; }
   .banner .city { color: rgba(244,241,234,0.85); }
   .nav { max-width: 1180px; margin: 0 auto; padding: 24px 36px; display: flex; justify-content: space-between; align-items: baseline; }
   .logo { font-family: 'Newsreader', Georgia, serif; font-size: 26px; font-weight: 500; letter-spacing: -0.01em; }
+  .brand-lockup { display: flex; align-items: baseline; gap: 12px; }
+  .brand-lockup .by { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
   .contact { display: flex; align-items: baseline; gap: 8px; font-size: 13px; }
   .contact .label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
   .contact a { color: var(--ink); text-decoration: none; }
@@ -54,23 +58,25 @@
 
   .hero { max-width: 1180px; margin: 56px auto 0; padding: 0 36px; display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
   .hero-text h1 { font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 60px; line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 22px; }
-  .hero-text h1 em { font-style: italic; color: var(--amber); }
-  .hero-text .sub-list .accent { font-style: italic; color: var(--amber); }
+  .hero-text h1 em { font-style: normal; color: var(--blue); }
+  .hero-text .lead { color: var(--muted); font-size: 17px; line-height: 1.6; max-width: 510px; margin-bottom: 20px; }
+  .hero-text .lead strong { color: var(--blue); font-weight: 700; }
   .hero-text .sub { color: var(--muted); font-size: 17px; line-height: 1.6; max-width: 480px; margin-bottom: 32px; }
   .hero-text .sub-list { list-style: none; margin: 0 0 32px; padding: 0; max-width: 510px; }
   .hero-text .sub-list li { position: relative; padding-left: 26px; color: var(--muted); font-size: 16px; line-height: 1.65; margin-bottom: 12px; }
-  .hero-text .sub-list li::before { content: ""; position: absolute; left: 6px; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+  .hero-text .sub-list li::before { content: ""; position: absolute; left: 6px; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
   .hero-text .sub-list li strong { color: var(--ink); font-weight: 600; }
   .hero-text .sub-list li:last-child { margin-bottom: 0; }
+  .hero-text .hero-note { font-size: 13px; color: var(--muted); line-height: 1.5; max-width: 510px; margin: -14px 0 30px; }
   .signup { max-width: 460px; display: flex; background: #fff; border: 1px solid var(--rule); border-radius: 999px; padding: 6px; position: relative; }
   .signup input[type="email"] { flex: 1; border: 0; background: transparent; outline: 0; font: inherit; padding: 12px 18px; color: var(--ink); }
   .signup input[type="email"]::placeholder { color: #A0A0A4; }
-  .signup:focus-within { box-shadow: 0 0 0 2px var(--amber); }
-  .signup button { background: var(--amber); color: var(--ink); border: 0; border-radius: 999px; padding: 12px 22px; font: 600 14px 'Inter', sans-serif; cursor: pointer; transition: opacity 0.15s; }
+  .signup:focus-within { box-shadow: 0 0 0 2px var(--blue); }
+  .signup button { background: var(--blue); color: #fff; border: 0; border-radius: 999px; padding: 12px 22px; font: 600 14px 'Inter', sans-serif; cursor: pointer; transition: opacity 0.15s; }
   .signup button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   .signup button:disabled { opacity: 0.6; cursor: default; }
   .signup .signup-error { display: none; }
-  a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 2px; }
+  a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
   /* Tap-target expansion: invisible 44px+ hit area without visual change */
   .contact a, .footer .right a, .founder .linkedin { position: relative; }
   .contact a::before, .footer .right a::before, .founder .linkedin::before {
@@ -80,7 +86,7 @@
   .signup-success { display: none; max-width: 460px; padding: 14px 22px; background: #fff; border: 1px solid var(--rule); border-radius: 999px; font-size: 14px; color: var(--ink); text-align: center; }
   .signup-success.show { display: block; }
   .signup.hidden { display: none; }
-  .signup-2 .signup-success { margin: 0 auto; }
+  .pricing .signup-success { margin: 56px auto 0; }
 
   /* iPhone mockup */
   .phone-wrap { display: flex; justify-content: center; }
@@ -113,42 +119,50 @@
   .composer { border-top: 1px solid var(--rule); padding: 8px 12px; display: flex; gap: 8px; align-items: center; background: #F4F0E7; }
   .composer .input { flex: 1; background: #fff; border: 1px solid var(--rule); border-radius: 999px; padding: 6px 12px; font-size: 11px; color: var(--muted); }
   .composer .send { width: 26px; height: 26px; border-radius: 50%; background: var(--amber); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; }
-  /* Phone mockup chat — Weltify tone (no third-party brand colors) */
-  .screen .chat { background: #F4F0E7; }
-  .screen .chat-header { background: var(--ink); border-bottom: none; }
-  .screen .chat-header .back { color: rgba(255,255,255,0.85); }
-  .screen .chat-header .avatar-sm { background: var(--amber); color: var(--ink); }
+  /* Phone mockup chat — messaging-app look (color cues only; no logos or wallpaper artwork) */
+  .screen .chat { background: #ECE5DD; }
+  .screen .chat-header { background: #008069; border-bottom: none; }
+  .screen .chat-header .back { color: rgba(255,255,255,0.9); }
+  .screen .chat-header .avatar-sm { background: #fff; color: #008069; }
   .screen .chat-header .who { color: #fff; }
-  .screen .chat-header .status-line { color: rgba(255,255,255,0.65); }
+  .screen .chat-header .status-line { color: rgba(255,255,255,0.8); }
   .screen .bubble.them { background: #fff; color: var(--ink); }
-  .screen .bubble.us { background: var(--amber); color: var(--ink); }
-  .screen .bubble.us .time { color: rgba(14,14,16,0.6); }
-  .screen .composer { background: #FCFAF5; }
+  .screen .bubble.us { background: #D9FDD3; color: #111B21; }
+  .screen .bubble.us .time { color: rgba(17,27,33,0.45); }
+  .screen .bubble.us .time::after { content: " ✓✓"; color: #53BDEB; letter-spacing: -1px; }
+  .screen .composer { background: #F0F2F5; }
+  .screen .composer .send { background: #008069; }
 
   .section { max-width: 1080px; margin: 110px auto 0; padding: 0 36px; }
   .eyebrow { text-align: center; font-size: 11px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 38px; }
   .how { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
   .how-card { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; }
-  .how-step { font: 500 11px 'Inter', sans-serif; letter-spacing: 0.22em; color: var(--amber); text-transform: uppercase; margin-bottom: 12px; }
-  .how-snippet { background: var(--bubble-them); border-radius: 12px; padding: 10px 14px; font-size: 13px; color: var(--ink); margin-top: auto; padding-top: 14px; line-height: 1.45; }
+  .how-step { font: 500 11px 'Inter', sans-serif; letter-spacing: 0.22em; color: var(--blue); text-transform: uppercase; margin-bottom: 12px; }
+  .how-snippet { background: var(--blue-soft); border-radius: 12px; padding: 10px 14px; font-size: 13px; color: var(--ink); margin-top: auto; padding-top: 14px; line-height: 1.45; }
   .how h3 { font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 18px; margin-bottom: 6px; }
   .how p { color: var(--muted); font-size: 13px; line-height: 1.6; }
 
   .pricing { max-width: 760px; margin: 110px auto 0; padding: 0 36px; text-align: center; }
-  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .price { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 32px 28px; text-align: left; }
-  .price .tier { font: 500 11px 'Inter', sans-serif; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-  .price .amount { font-family: 'Newsreader', serif; font-size: 38px; font-weight: 500; letter-spacing: -0.01em; }
-  .price .meta { color: var(--muted); font-size: 13px; margin-top: 4px; }
-  .price ul { list-style: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--rule); }
-  .price li { font-size: 13px; padding: 4px 0; color: #2C2C2E; }
+  .price-card { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 28px 26px; text-align: left; max-width: 460px; margin: 0 auto; }
+  .price-card .ptier { padding: 14px 0; }
+  .price-card .ptier + .ptier { border-top: 1px solid var(--rule); }
+  .price-card .pname { font: 600 11px 'Inter', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .price-card .pamt { font-family: 'Newsreader', serif; font-size: 34px; font-weight: 500; letter-spacing: -0.01em; margin-top: 2px; }
+  .price-card .pstrike { font-size: 16px; color: var(--muted); text-decoration: line-through; font-family: 'Inter', sans-serif; font-weight: 500; }
+  .price-card .pmeta { font-size: 12.5px; color: var(--muted); }
+  .price-card .prow { display: flex; justify-content: space-between; align-items: baseline; margin-top: 10px; }
+  .price-card .prow > span:first-child { font-size: 14px; }
+  .price-card .prow .psub { color: var(--muted); font-size: 12px; }
+  .price-card .pinline { font-family: 'Newsreader', serif; font-size: 21px; }
+  .price-card .prefund { font-size: 12.5px; color: var(--blue); font-weight: 600; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--rule); }
   .signup-2 { max-width: 460px; margin: 56px auto 0; }
 
   .founder { max-width: 820px; margin: 130px auto 0; padding: 64px 36px 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 130px 1fr; gap: 40px; align-items: start; }
   .avatar { width: 130px; height: 130px; border-radius: 50%; overflow: hidden; background: #E5E2DA; }
   .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .founder .role { font: 500 11px 'Inter', sans-serif; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amber); }
+  .founder .role { font: 500 11px 'Inter', sans-serif; letter-spacing: 0.3em; text-transform: uppercase; color: var(--blue); }
   .founder h2 { font-family: 'Newsreader', serif; font-weight: 500; font-size: 30px; margin-top: 4px; display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .founder h2 .founder-links { display: inline-flex; align-items: baseline; gap: 16px; }
   .founder .linkedin { font: 500 11px 'Inter', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s; }
   .founder .linkedin:hover { color: var(--ink); border-color: var(--ink); }
   .founder p { margin: 14px 0; font-size: 15px; line-height: 1.78; color: #2C2C2E; }
@@ -184,8 +198,7 @@
     .phone { transform: rotate(-1deg); width: 280px; height: 580px; }
     .section, .pricing { padding: 0 20px; margin-top: 72px; }
     .how { grid-template-columns: 1fr; gap: 16px; }
-    .price-grid { grid-template-columns: 1fr; gap: 16px; }
-    .price { padding: 24px 22px; }
+    .price-card { padding: 24px 22px; }
     .signup-2 { margin-top: 36px; }
     .founder {
       grid-template-columns: 1fr;
@@ -212,9 +225,12 @@
 </head>
 <body>
   <header>
-    <div class="banner" role="status"><span class="dot" aria-hidden="true">●</span>Now preparing for launch — join the waitlist below to be first to know</div>
+    <div class="banner" role="status"><span class="dot" aria-hidden="true">●</span>Now preparing for launch — only 50 early-access spots. Join the waitlist below.</div>
     <nav class="nav" aria-label="Primary">
-      <div class="logo">Weltify</div>
+      <div class="brand-lockup">
+        <span class="logo">Weltify</span>
+        <span class="by">by Welt Path</span>
+      </div>
       <div class="contact">
         <span class="label">Contact</span>
         <a href="mailto:weltifyteam@gmail.com">weltifyteam@gmail.com</a>
@@ -224,11 +240,13 @@
 
   <section class="hero">
     <div class="hero-text">
-      <h1>Trusted <em>locals</em> to turn to when you get sick in Tokyo.</h1>
+      <h1>Your trusted <em>local</em> to turn to when you get sick in Tokyo.</h1>
+      <p class="lead">Two things AI and Google search can't give you &mdash; but <strong>a trusted Tokyo local</strong> can:</p>
       <ul class="sub-list">
-        <li><strong>The latest, easy-to-follow and reliable guidance</strong> on what to do &mdash; <em class="accent">the part AI and Google search can't replace.</em></li>
+        <li><strong>The latest, easy-to-follow and reliable guidance</strong> on what to do.</li>
         <li><strong>The reassurance</strong> of having a trusted local behind you.</li>
       </ul>
+      <p class="hero-note">Your local is a regular Tokyo resident, not a doctor or medical professional. They don't give medical advice.</p>
       <form class="signup" data-waitlist-form method="POST" action="https://7e8c02d5.sibforms.com/serve/MUIFAGeylIeOvnkbSv2Fs3bNZCjF9n2A44dEkhReDkcgvW2LXTqYXyUKURogJgZdz9NYh4O5VpqeflPHiN4Pqw9ocBWbcY4i9TZf4s8z8fDQ4ZWdpP6PLgmRCurRTzZc9l1hQPrzD2QbTD7vH5t2Pvg-gvnD2raf9mT5cbFg6dxO6n9fFuOlNcHH03NAC8BVys43vVvJhnPBbdHHjw==">
         <input type="email" name="EMAIL" placeholder="your@email.com" required autocomplete="email">
         <button type="submit">Join Waitlist</button>
@@ -275,19 +293,19 @@
       <div class="how-card">
         <div class="how-step">Step 01</div>
         <h3>Register</h3>
-        <p>Share your Tokyo stay dates and preferred plan — no complicated forms, just a quick start.</p>
-        <div class="how-snippet">"Arriving Mar 12, leaving Mar 19 — Basic plan, please."</div>
+        <p>Pick the dates you want support from a Tokyo local — any part of your stay, not necessarily the whole trip.<br>No complicated forms.</p>
+        <div class="how-snippet">"I want support from Mar 12 to 19."</div>
       </div>
       <div class="how-card">
         <div class="how-step">Step 02</div>
         <h3>Meet your local on WhatsApp</h3>
-        <p>A carefully selected Tokyo local reaches out before your trip. Real person, kind, and someone you can trust — not a chatbot.</p>
+        <p>A carefully selected Tokyo local reaches out. Real person, kind, and someone you can trust — not a chatbot.</p>
         <div class="how-snippet">"Hi — I'm Aiko, your Weltify local. I'll be with you throughout the registered period."</div>
       </div>
       <div class="how-card">
         <div class="how-step">Step 03</div>
-        <h3>Unlimited consultation</h3>
-        <p>Throughout your registered period in Tokyo, ask anything as many times as you need. They stay with you until you're OK.</p>
+        <h3>Tell them when you're sick</h3>
+        <p>Feeling sick during your stay? Message your local and they'll help you sort it out — find a clinic, translate, or work out the next step — until you're OK.</p>
         <div class="how-snippet">"Fever again? I'll find you the nearest clinic right away."</div>
       </div>
     </div>
@@ -295,17 +313,19 @@
 
   <section class="pricing">
     <h2 class="eyebrow">— Pricing —</h2>
-    <div class="price-grid">
-      <div class="price">
-        <div class="tier">Basic</div>
-        <div class="amount">¥2,800</div>
-        <div class="meta">up to 14 days</div>
+    <div class="price-card">
+      <div class="ptier">
+        <div class="pname">Registration</div>
+        <div class="pamt">¥1,000 <span class="pstrike">¥3,980</span></div>
+        <div class="pmeta">Early-access price · up to 14 days.</div>
       </div>
-      <div class="price">
-        <div class="tier">Extended</div>
-        <div class="amount">¥4,300</div>
-        <div class="meta">up to 31 days</div>
+      <div class="ptier">
+        <div class="pname">Then, per consultation</div>
+        <div class="prow"><span>Text consult <span class="psub">— quick advice by chat</span></span><span class="pinline">¥1,500</span></div>
+        <div class="prow"><span>Coordination <span class="psub">— call &amp; book the clinic</span></span><span class="pinline">¥3,000</span></div>
+        <div class="pmeta" style="margin-top:10px">Per case, not per message. Capped at ¥9,800 per stay.</div>
       </div>
+      <div class="prefund">✓ Not happy? Full refund of your registration fee — no questions asked.</div>
     </div>
     <form class="signup signup-2" data-waitlist-form method="POST" action="https://7e8c02d5.sibforms.com/serve/MUIFAGeylIeOvnkbSv2Fs3bNZCjF9n2A44dEkhReDkcgvW2LXTqYXyUKURogJgZdz9NYh4O5VpqeflPHiN4Pqw9ocBWbcY4i9TZf4s8z8fDQ4ZWdpP6PLgmRCurRTzZc9l1hQPrzD2QbTD7vH5t2Pvg-gvnD2raf9mT5cbFg6dxO6n9fFuOlNcHH03NAC8BVys43vVvJhnPBbdHHjw==">
       <input type="email" name="EMAIL" placeholder="your@email.com" required autocomplete="email">
@@ -322,7 +342,7 @@
     <div class="avatar"><img src="shintaro.jpg" alt="Shintaro Yasuda"></div>
     <div>
       <div class="role">Founder</div>
-      <h2>Shintaro Yasuda <a class="linkedin" href="https://www.linkedin.com/in/shintaro-yasuda-6738602a9/" target="_blank" rel="noopener">LinkedIn →</a></h2>
+      <h2>Shintaro Yasuda <span class="founder-links"><a class="linkedin" href="https://www.linkedin.com/in/shintaro-yasuda-6738602a9/" target="_blank" rel="noopener">LinkedIn →</a> <a class="linkedin" href="https://www.facebook.com/people/Shintaro-Yasuda/pfbid0Kq7SeZ5fRyfVp5WEbqUqYkHd5ZvBPEmh7gBzBRvMXW8VehH7NNNPsQf4LMQ5Tchel/" target="_blank" rel="noopener">Facebook →</a></span></h2>
       <p>University of Tokyo, Economics. Currently working at a global consulting firm. Fluent in English and Japanese. Studied in Berlin.</p>
       <p>While staying in Berlin, I fell ill — with no one to turn to and no latest, easy-to-follow and reliable information on what to do. That fear never left me — and it shouldn't be anyone's story.</p>
       <p>Weltify will exist so no one staying in Tokyo has to face that fear.</p>
