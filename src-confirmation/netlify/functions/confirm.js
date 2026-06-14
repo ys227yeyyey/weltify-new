@@ -10,7 +10,10 @@ const path = require('path');
 
 function loadTemplate(name) {
   // netlify.toml の included_files で同梱した templates/ を読む。
-  return fs.readFileSync(path.join(process.cwd(), 'templates', name), 'utf8');
+  // 起点は __dirname（この関数ファイルの位置）。Netlify はリポジトリのパス構造を
+  // 保持してバンドルするため、process.cwd() 起点だと置き場所とズレて ENOENT になる。
+  // templates/ は netlify/functions/ から見て 2 つ上（../../templates）。
+  return fs.readFileSync(path.join(__dirname, '..', '..', 'templates', name), 'utf8');
 }
 
 function page(file) {
