@@ -1,0 +1,23 @@
+# Stripe post-payment confirmation site.
+# Netlify UI で Base directory = "src-confirmation" を設定すること。
+#
+# 公開するのは public/ の静的アセットのみ。確認ページ本体(valid/invalid)は
+# templates/ に置き Web から直接読めないようにし、関数経由でのみ配信する。
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+  # global fetch を使うため Node 18+ を固定（古い既定の Node16 には fetch が無い）
+  environment = { NODE_VERSION = "20" }
+
+[functions]
+  node_bundler = "esbuild"
+  # templates/ を関数バンドルに同梱（publish 外なので直接DLは不可）
+  included_files = ["templates/**"]
+
+# Stripe からのリダイレクト先 "/?session=cs_live_..." を関数で受ける。
+# status=200 = URL を変えずに中身だけ関数で差し替え（rewrite）。
+[[redirects]]
+  from = "/"
+  to = "/.netlify/functions/confirm"
+  status = 200
+  force = true

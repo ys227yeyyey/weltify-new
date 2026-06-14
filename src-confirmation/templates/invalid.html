@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Invalid link — Weltify</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="favicon-v2.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #EEF4FA;
+      --ink: #0E1F33;
+      --muted: #5b7088;
+      --blue: #1565C0;
+      --card: #fff;
+      --rule: #DCE6F0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: radial-gradient(120% 80% at 85% -5%, #F4F9FF, var(--bg) 55%);
+      color: var(--ink);
+      line-height: 1.55;
+      padding: 40px 28px 56px;
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: relative;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .brand {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .contact-top {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .contact-top a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .confirm {
+      display: flex;
+      justify-content: center;
+      padding: 32px 0 8px;
+    }
+
+    .bcard {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 16px;
+      padding: 48px 44px;
+      max-width: 540px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: -.02em;
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .lead {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 32em;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background: var(--blue);
+      color: #fff;
+      font: 600 15px 'Inter';
+      padding: 16px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.18s, transform 0.12s;
+    }
+
+    .btn:hover {
+      background: #0f4fa0;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 28px 18px 40px;
+      }
+
+      .bcard {
+        padding: 36px 24px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .contact-top {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <a href="https://weltify.netlify.app/" class="brand">Weltify</a>
+      <div class="contact-top">Contact · <a href="mailto:weltifyteam@gmail.com">weltifyteam@gmail.com</a></div>
+    </div>
+
+    <main class="confirm">
+      <div class="bcard">
+        <div class="eyebrow">Invalid link</div>
+        <h1>This page is <span>not valid</span>.</h1>
+        <p class="lead">We couldn't confirm a completed payment for this link. If you've just paid and reached this page
+          by mistake, email us and we'll sort it out right away.</p>
+        <a class="btn" href="mailto:weltifyteam@gmail.com">Contact Weltify</a>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+
+</html>

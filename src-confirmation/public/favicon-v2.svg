@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#EEF4FA"/>
+  <!-- Newsreader (wght 500) "W" glyph outline, matching the site logo -->
+  <path transform="matrix(0.01901 0 0 -0.01901 13.1331 44.8599)"
+        fill="#0E1F33"
+        d="M1033 1154 602 -13H464L147 1246L-7 1300V1352H548V1300L377 1248L628 216L579 215L987 1366H1119L1562 184L1481 158L1721 1248L1552 1300V1352H1992V1300L1843 1248L1540 -13H1405L970 1131Z"/>
+</svg>
