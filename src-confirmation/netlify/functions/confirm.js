@@ -27,6 +27,36 @@ function page(file) {
   };
 }
 
+// client_reference_id は "YYYYMMDD-YYYYMMDD-<base64url(name)>"。
+// 日付部は固定17文字なので、18文字目以降を name の base64url とみなして復号する。
+function decodeName(ref) {
+  if (!ref || ref.length <= 18) return '';
+  let b64 = ref.slice(18).replace(/-/g, '+').replace(/_/g, '/');
+  while (b64.length % 4) b64 += '=';
+  try {
+    return Buffer.from(b64, 'base64').toString('utf8').trim();
+  } catch (e) {
+    return '';
+  }
+}
+
+// 名前を WhatsApp 自動送信文に差し込んで valid ページを返す。
+function validPage(ref) {
+  const name = decodeName(ref);
+  const message = name
+    ? "Hi, I'm " + name + ". I've just registered for Weltify — looking forward to getting started!"
+    : "Hi, I've just registered for Weltify — looking forward to getting started!";
+  const body = loadTemplate('valid.html').replace('{{WA_TEXT}}', encodeURIComponent(message));
+  return {
+    statusCode: 200,
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'no-store',
+    },
+    body,
+  };
+}
+
 exports.handler = async (event) => {
   const session =
     (event.queryStringParameters && event.queryStringParameters.session) || '';
@@ -44,7 +74,7 @@ exports.handler = async (event) => {
     if (!res.ok) return page('invalid.html'); // 404 等＝存在しないセッション
 
     const data = await res.json();
-    if (data && data.payment_status === 'paid') return page('valid.html');
+    if (data && data.payment_status === 'paid') return validPage(data.client_reference_id);
 
     return page('invalid.html');
   } catch (e) {
