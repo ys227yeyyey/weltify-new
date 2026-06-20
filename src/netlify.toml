@@ -1,0 +1,5 @@
+# Main site (weltify landing).
+# Netlify UI で Base directory = "src" を設定すること。
+# publish "." は base(=src)自身を公開する意味。
+[build]
+  publish = "."
