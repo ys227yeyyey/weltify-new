@@ -61,7 +61,7 @@ function validPage(ref) {
   const intro = name ? "Hi, I'm " + name + ". " : 'Hi, ';
   const message = tbd
     ? intro +
-      "I've just registered for Weltify. My travel dates aren't fixed yet — I'll share them as soon as I know!"
+      "I've just registered for Weltify. I don't know yet which days I'll want support — I'll share them as soon as I do!"
     : intro + "I've just registered for Weltify — looking forward to getting started!";
   const body = loadTemplate('valid.html')
     .replace('{{TBD_NOTE}}', tbd ? TBD_NOTE : '')
