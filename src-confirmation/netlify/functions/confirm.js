@@ -40,13 +40,32 @@ function decodeName(ref) {
   }
 }
 
+// 日程未定で登録した場合、LP は日付部を "DATESTBD-DATESTBD-"（通常の
+// "YYYYMMDD-YYYYMMDD-" と同じ 18 文字）にして渡してくる。
+function isDatesTbd(ref) {
+  return typeof ref === 'string' && ref.slice(0, 18) === 'DATESTBD-DATESTBD-';
+}
+
+// 日程未定の人だけに出す催促ブロック。挨拶文は下書きなので送信前に消せる。
+// ページ本体にも出しておくことで、消されても催促が残る。
+const TBD_NOTE =
+  '<div class="tbd-note"><strong>Your dates aren\'t set yet.</strong> ' +
+  "Tell your local the days you'd like support (up to 14 days) as soon as you know them " +
+  '&mdash; just send them in the chat.</div>';
+
 // 名前を WhatsApp 自動送信文に差し込んで valid ページを返す。
+// 日程未定の登録者には、挨拶文の時点で日程共有を促す。
 function validPage(ref) {
   const name = decodeName(ref);
-  const message = name
-    ? "Hi, I'm " + name + ". I've just registered for Weltify — looking forward to getting started!"
-    : "Hi, I've just registered for Weltify — looking forward to getting started!";
-  const body = loadTemplate('valid.html').replace('{{WA_TEXT}}', encodeURIComponent(message));
+  const tbd = isDatesTbd(ref);
+  const intro = name ? "Hi, I'm " + name + ". " : 'Hi, ';
+  const message = tbd
+    ? intro +
+      "I've just registered for Weltify. My travel dates aren't fixed yet — I'll share them as soon as I know!"
+    : intro + "I've just registered for Weltify — looking forward to getting started!";
+  const body = loadTemplate('valid.html')
+    .replace('{{TBD_NOTE}}', tbd ? TBD_NOTE : '')
+    .replace('{{WA_TEXT}}', encodeURIComponent(message));
   return {
     statusCode: 200,
     headers: {

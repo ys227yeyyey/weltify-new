@@ -194,6 +194,23 @@
       margin-bottom: 16px;
     }
 
+    /* 日程未定で登録した人にだけ出す催促（confirm.js がプレースホルダを差し替える） */
+    .tbd-note {
+      background: var(--blue-soft);
+      border: 1px solid var(--blue);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .tbd-note strong {
+      color: var(--blue);
+    }
+
     .next-step-item {
       display: flex;
       align-items: flex-start;
@@ -378,6 +395,8 @@
             </div>
           </div>
         </div>
+
+        {{TBD_NOTE}}
 
         <!-- WhatsApp button -->
         <a class="wa-btn"

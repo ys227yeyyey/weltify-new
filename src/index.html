@@ -168,6 +168,11 @@ h1 span{color:var(--blue)}
 .dp-field label{display:block;font:600 11px 'Inter';letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
 .dp-field input{width:100%;border:1px solid var(--rule);border-radius:12px;padding:13px 14px;font:500 15px 'Inter';color:var(--ink);background:#fff;transition:border-color .18s ease,box-shadow .18s ease}
 .dp-field input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(21,101,192,.12)}
+.dp-field input:disabled{background:#f2f4f7;color:var(--muted);cursor:not-allowed}
+.dp-tbd{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--rule);border-radius:12px;padding:12px 14px;margin-bottom:14px;cursor:pointer;background:var(--blue-soft);transition:border-color .18s ease}
+.dp-tbd:hover{border-color:var(--blue)}
+.dp-tbd input{width:16px;height:16px;margin:2px 0 0;accent-color:var(--blue);flex:0 0 auto;cursor:pointer}
+.dp-tbd span{font-size:13px;line-height:1.5;color:var(--ink)}
 .dp-msg{font-size:12.5px;line-height:1.45;min-height:18px;margin:2px 0 18px}
 .dp-msg.ok{color:var(--blue);font-weight:600}
 .dp-msg.err{color:#c0392b;font-weight:600}
@@ -217,7 +222,7 @@ h1 span{color:var(--blue)}
     <div class="how-card">
       <div class="how-step">Step 01</div>
       <h3>Register</h3>
-      <p>✔︎Your real name<br>✔︎The days when you want support from a Tokyo local（up to 14 days）</p>
+      <p>✔︎Your real name<br>✔︎The days when you want support from a Tokyo local（up to 14 days）<br>Not sure of your dates yet? Register now and tell your local later.</p>
     </div>
     <div class="how-card">
       <div class="how-step">Step 02</div>
@@ -247,7 +252,7 @@ h1 span{color:var(--blue)}
         <div class="pamt">¥3,000 <span class="punit">each</span></div>
         <div class="pmeta">call &amp; book the clinic for you</div>
       </a>
-      <div class="prefund">✓ Not happy? Full refund of your registration fee.<br>✓ Secure payment via Stripe</div>
+      <div class="prefund">✓ Dates not fixed yet? Lock your ¥1,000 spot now, tell us the days later.<br>✓ Not happy? Full refund of your registration fee.<br>✓ Secure payment via Stripe</div>
     </div>
     <div class="bcard fcard">
       <div class="blab">Who's behind it</div>
@@ -286,7 +291,7 @@ h1 span{color:var(--blue)}
   <div class="dp-card">
     <button class="dp-close" id="dpClose" aria-label="Close">&times;</button>
     <div class="dp-title" id="dpTitle">Registration</div>
-    <p class="dp-sub">You can register <strong style="color:var(--blue);font-weight:700">up to 14 days</strong> of support.</p>
+    <p class="dp-sub">You can register <strong style="color:var(--blue);font-weight:700">up to 14 days</strong> of support. Dates not fixed yet? Lock your spot now and tell your local later.</p>
     <div class="dp-field">
       <label for="dpFirstName">First name</label>
       <input type="text" id="dpFirstName" autocomplete="given-name" maxlength="40" placeholder="e.g. Maria">
@@ -303,6 +308,10 @@ h1 span{color:var(--blue)}
       <label for="dpEnd">Support ends</label>
       <input type="date" id="dpEnd">
     </div>
+    <label class="dp-tbd" for="dpTbd">
+      <input type="checkbox" id="dpTbd">
+      <span>My travel dates aren't fixed yet &mdash; I'll tell my local once they are.</span>
+    </label>
     <div class="dp-msg" id="dpMsg"></div>
     <button class="dp-confirm" id="dpConfirm" disabled>Continue to payment &rarr;</button>
   </div>
@@ -315,6 +324,7 @@ h1 span{color:var(--blue)}
   var familyNameEl=document.getElementById('dpFamilyName');
   var startEl=document.getElementById('dpStart');
   var endEl=document.getElementById('dpEnd');
+  var tbdEl=document.getElementById('dpTbd');
   var msg=document.getElementById('dpMsg');
   var confirmBtn=document.getElementById('dpConfirm');
   var closeBtn=document.getElementById('dpClose');
@@ -331,6 +341,7 @@ h1 span{color:var(--blue)}
     var t=todayStr();
     startEl.min=t; endEl.min=t;
     firstNameEl.value=''; familyNameEl.value=''; startEl.value=''; endEl.value='';
+    tbdEl.checked=false; startEl.disabled=false; endEl.disabled=false;
     msg.textContent=''; msg.className='dp-msg';
     confirmBtn.disabled=true;
     overlay.classList.add('open');
@@ -346,6 +357,12 @@ h1 span{color:var(--blue)}
   function validate(){
     var s=startEl.value, e=endEl.value;
     if(s) endEl.min=s;
+    if(tbdEl.checked){
+      if(!firstNameEl.value.trim()||!familyNameEl.value.trim()){ msg.textContent='Please enter your first and family name.'; msg.className='dp-msg'; confirmBtn.disabled=true; return; }
+      msg.textContent='✓ Your spot is locked. Tell your local your dates any time — up to '+MAX_DAYS+' days of support.'; msg.className='dp-msg ok';
+      confirmBtn.disabled=false;
+      return;
+    }
     if(!s||!e){ msg.textContent=''; msg.className='dp-msg'; confirmBtn.disabled=true; return; }
     if(e<s){ msg.textContent='The end day must be on or after the start.'; msg.className='dp-msg err'; confirmBtn.disabled=true; return; }
     var days=diffDays(s,e)+1;
@@ -361,10 +378,17 @@ h1 span{color:var(--blue)}
   familyNameEl.addEventListener('input',validate);
   startEl.addEventListener('change',validate);
   endEl.addEventListener('change',validate);
+  tbdEl.addEventListener('change',function(){
+    startEl.disabled=endEl.disabled=tbdEl.checked;
+    if(tbdEl.checked){ startEl.value=''; endEl.value=''; }
+    validate();
+  });
   confirmBtn.addEventListener('click',function(){
     if(confirmBtn.disabled) return;
     var fullName=firstNameEl.value.trim()+' '+familyNameEl.value.trim();
-    var ref=startEl.value.replace(/-/g,'')+'-'+endEl.value.replace(/-/g,'')+'-'+b64url(fullName);
+    // 日付未定は 18 文字の固定プレフィックス（確認サイト側の name 復号位置を保つ）
+    var period=tbdEl.checked?'DATESTBD-DATESTBD-':startEl.value.replace(/-/g,'')+'-'+endEl.value.replace(/-/g,'')+'-';
+    var ref=period+b64url(fullName);
     var sep=payBase.indexOf('?')>-1?'&':'?';
     window.location.href=payBase+sep+'client_reference_id='+ref;
   });
