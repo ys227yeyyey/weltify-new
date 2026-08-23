@@ -403,6 +403,8 @@ h1 span{color:var(--blue)}
       openModal(this.getAttribute('href'));
     });
   }
+  // QR から #register で来た人は、Register now を押したのと同じ状態で開く
+  if(location.hash==='#register'&&triggers.length){ openModal(triggers[0].getAttribute('href')); }
 })();
 </script>
 </body></html>
