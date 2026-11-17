@@ -1,0 +1,36 @@
+# Weltify — SNS 告知文（知り合いにシェアしてもらう用 / pitch/weltify-hospital-pitch.html と併用）
+
+=== メイン版 ===
+
+Getting sick in Tokyo is scary when you don't know anyone in the city.
+
+Weltify gives you one trusted local in Tokyo — a real person, not a doctor — you can message when you get sick. You're not facing it alone, and they check in on you afterward.
+
+It's all on WhatsApp, or whatever app you already use. Available 7:00–22:00, for up to 14 days of your trip.
+
+What AI and Google can't give you: the reassurance of having a trusted local in Tokyo behind you.
+
+¥1,000 one-time for the first 50 people (normally ¥5,000). Full refund if you're not happy.
+Not sure of your dates yet? Register now to lock your ¥1,000 spot, and tell your local the days later.
+
+👉 https://weltify.netlify.app/
+
+
+=== シェアしてくれる人が自分の言葉で添える1行（任意） ===
+
+A friend of mine in Tokyo started this — sharing in case anyone you know is heading to Japan.
+
+
+=== X / Threads 用の短縮版 ===
+
+Getting sick in Tokyo when you know no one there is scary.
+
+Weltify = one trusted Tokyo local on WhatsApp or your preferred app for your stay in Tokyo. Someone who has your back when you get sick — and checks in on you after.
+
+¥1,000 for the first 50 (normally ¥5,000). Full refund if you're not happy.
+👉 https://weltify.netlify.app/
+
+
+=== 任意で足せる1行（¥3,000 の追加サービスを明示したい場合、Full refund の直後に） ===
+
+(Optional: ¥3,000 if you want them to call and book the clinic for you.)

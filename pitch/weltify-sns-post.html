@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=1080">
+<title>Weltify — SNS post (1080×1350)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF4FA;--ink:#0E1F33;--muted:#5b7088;--blue:#1565C0;--blue-soft:#E3EDFF;--card:#fff;--rule:#DCE6F0;}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{font-family:'Inter',system-ui,sans-serif;background:radial-gradient(120% 80% at 85% -5%,#F4F9FF,var(--bg) 55%);color:var(--ink);line-height:1.5;padding:64px 72px 56px;display:flex;flex-direction:column}
+.brand{font-family:'Newsreader',Georgia,serif;font-size:44px;font-weight:500;letter-spacing:-.01em}
+h1{font-family:'Newsreader',Georgia,serif;font-size:80px;font-weight:500;line-height:1.04;letter-spacing:-.02em;margin-top:34px}
+h1 span{color:var(--blue)}
+
+.body{flex:1;display:grid;grid-template-columns:1fr 380px;gap:32px;margin-top:40px;min-height:0}
+.left{display:flex;flex-direction:column}
+.lead{font-size:31px;color:var(--muted);line-height:1.4}
+.lead strong{color:var(--blue);font-weight:700}
+.points{list-style:none;margin-top:40px}
+.points li{position:relative;padding-left:40px;font-size:33px;color:#33475e;line-height:1.36;margin-bottom:34px}
+.points li::before{content:"";position:absolute;left:6px;top:14px;width:16px;height:16px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 6px rgba(21,101,192,.14)}
+.points li strong{color:var(--ink);font-weight:700}
+
+.qrrow{display:flex;align-items:center;gap:22px;margin-top:auto}
+.qr{width:190px;height:190px;flex-shrink:0;background:#fff;border:1px solid var(--rule);border-radius:16px;padding:10px}
+.qr img{width:100%;height:100%;display:block;image-rendering:pixelated}
+.qrcta{font:700 27px 'Inter';line-height:1.3}
+.qrsub{font-size:21px;color:var(--muted);margin-top:6px}
+.price{margin-top:24px;background:var(--card);border:2px solid var(--blue);border-radius:22px;padding:24px 28px;box-shadow:0 8px 24px rgba(21,101,192,.16)}
+.pamt{font-family:'Newsreader',serif;font-size:64px;font-weight:500;line-height:1;letter-spacing:-.01em}
+.pstrike{font-size:30px;color:var(--muted);text-decoration:line-through}
+.plabel{font:600 22px 'Inter';color:var(--muted);margin-top:8px}
+.pmeta{font:700 24px 'Inter';color:var(--blue);margin-top:6px}
+
+/* phone mockup (same chat as the pitch page, scaled for feed) */
+.phone-wrap{display:flex;justify-content:center;align-items:flex-start;padding-top:8px}
+.phone{width:376px;height:740px;background:#15151a;border-radius:56px;padding:14px;box-shadow:0 36px 72px -24px rgba(13,59,102,.5),inset 0 0 0 3px #2A2A2C;position:relative;transform:rotate(-2deg)}
+.phone::before{content:"";position:absolute;top:22px;left:50%;transform:translateX(-50%);width:130px;height:34px;background:#0A0A0B;border-radius:18px;z-index:2}
+.screen{width:100%;height:100%;background:#F4F6FB;border-radius:42px;overflow:hidden;display:flex;flex-direction:column}
+.status{height:56px;display:flex;justify-content:space-between;align-items:center;padding:20px 30px 6px;font:600 16px 'Inter'}
+.chat-header{padding:10px 18px 14px;display:flex;align-items:center;gap:12px;background:#075E54}
+.chat-header .back{color:rgba(255,255,255,.85);font-size:24px}
+.avatar-sm{width:42px;height:42px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:#fff;font:600 18px 'Inter'}
+.who{font:700 18px 'Inter';color:#fff}
+.status-line{font-size:13px;color:rgba(255,255,255,.7)}
+.chat{flex:1;padding:16px 14px 10px;display:flex;flex-direction:column;gap:9px;overflow:hidden;background:#ECE5DD}
+.bubble{max-width:86%;padding:10px 14px 20px;border-radius:16px;font-size:19px;line-height:1.34;position:relative}
+.bubble.them{background:#fff;align-self:flex-start;border-top-left-radius:5px}
+.bubble.us{background:#DCF8C6;align-self:flex-end;border-top-right-radius:5px}
+.bubble .time{position:absolute;right:10px;bottom:4px;font-size:11px;opacity:.55}
+
+.foot{font-size:19px;color:var(--muted);text-align:center;margin-top:28px}
+</style></head><body>
+  <div class="brand">Weltify</div>
+  <h1>Your trusted <span>local</span> to turn to<br>when you get sick in Tokyo.</h1>
+
+  <div class="body">
+    <div class="left">
+      <p class="lead">Something AI and Google search can't give you &mdash; but <strong>a trusted Tokyo local</strong> can:</p>
+      <ul class="points">
+        <li><strong>The reassurance</strong> of having a trusted local behind you.</li>
+      </ul>
+      <div class="qrrow">
+        <div class="qr"><img src=".canvas/qr-register.png" alt="QR code to weltify.netlify.app"></div>
+        <div><div class="qrcta">Scan to register</div><div class="qrsub">Secure payment via Stripe.</div></div>
+      </div>
+      <div class="price">
+        <div class="pamt">&yen;1,000 <span class="pstrike">&yen;5,000</span></div>
+        <div class="plabel">Registration fee</div>
+        <div class="pmeta">First 50 people only</div>
+      </div>
+    </div>
+    <div class="phone-wrap" aria-hidden="true">
+      <div class="phone"><div class="screen">
+        <div class="status"><span>9:41</span><span>● ● ●</span></div>
+        <div class="chat-header"><div class="back">‹</div><div class="avatar-sm">S</div>
+          <div><div class="who">Shintaro · Weltify</div><div class="status-line">online</div></div></div>
+        <div class="chat">
+          <div class="bubble us">Hi — I have a fever, ~38.5°C, and bad stomach pain. What should I do?<span class="time">9:38</span></div>
+          <div class="bubble them">Sorry you're not feeling well. You're near Shibuya — I've got you.<span class="time">9:38</span></div>
+          <div class="bubble them">There's a clinic 6 min walk away — Shibuya Family Clinic. Walk-ins welcome, English-speaking doctor until 6pm.<span class="time">9:39</span></div>
+          <div class="bubble us">Thank you 🙏 going now<span class="time">9:40</span></div>
+          <div class="bubble them">I'll check in on you in 2 hours. You're not alone in this.<span class="time">9:41</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <p class="foot">Your local is a Tokyo resident, not a medical professional.</p>
+</body></html>

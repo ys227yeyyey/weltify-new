@@ -1,0 +1,22 @@
+---
+
+【個人向け】
+
+用途: 相手が今東京にいるか、これから来るかが分からない場合。まず条件付きで本人利用を打診し、当てはまらなければ東京にいる／来る知り合いへの紹介を依頼する。
+東京にいる・来ると分かっている相手には outreach-template-personal-tokyo-confirmed.txt を使う。
+主語: 本人利用の部分は you、紹介の部分は they で書き分ける。
+このファイルの英語版が全テンプレの文体・構成のベース。
+
+---
+
+Hey [Name]! It's been a while, hope you're doing well. [相手向けの1文]
+
+I'm reaching out with a small favor. I just launched a service called Weltify, and if you're in Tokyo or have a trip coming up, I'd love for you to try it. If you know anyone who is, I'd be grateful if you passed it along.
+
+It's a WhatsApp service that gives foreigners in Tokyo a trusted local to message when they get sick, so they're never alone with it. The local can also call the clinic and book an appointment for you (optional add-on), and will follow up afterward to see how you're doing. I once got sick alone in Berlin with no one to turn to, which is why I built it.
+
+It's ¥1,000 for the first 50 people (¥5,000 after). No pressure at all!
+
+https://weltify.netlify.app/
+
+

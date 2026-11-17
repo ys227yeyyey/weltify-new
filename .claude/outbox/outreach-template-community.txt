@@ -1,0 +1,24 @@
+---
+
+【コミュニティ向け】
+
+用途: 日本人と日本に関心のあるドイツ語圏の人が集まるコミュニティ（かつて運営していた国際交流団体の Facebook グループ・現在は活動休止中）への投稿。
+outreach-template-personal.txt をベースに、冒頭の挨拶を日本語・ドイツ語、本文を英語、末尾に日本人メンバー向けの依頼を日本語で付けた。
+
+---
+
+お久しぶりです！元運営のShintaroです。
+Lange nichts gehört! Shintaro hier, ich habe die Gruppe früher organisiert.
+Hope you're all doing well 😊
+
+I have a small favor to ask. I recently launched Weltify, a service that gives you a trusted local to message when you get sick in Tokyo. If you're in Tokyo or have a trip coming up, I'd love for you to try it.
+If you know anyone heading to Tokyo, whether friends, family or classmates, I'd be grateful if you passed it along.
+
+Your local is someone in Tokyo who has your back when you get sick. They can also call the clinic and book an appointment for you (optional add-on).
+I once got sick alone in Berlin with no one to turn to, which is why I built it.
+
+It's ¥1,000 for the first 50 people (¥5,000 after)!
+https://weltify.netlify.app/
+
+----------------------------------------------------------
+日本人の皆さんへ：東京に来る海外の友人がいましたら、ぜひこのサービスを共有いただけると幸いです！

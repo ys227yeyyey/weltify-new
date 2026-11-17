@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: radial-gradient(120% 80% at 85% -5%, #F4F9FF, #EEF4FA 55%);
+      color: #0E1F33;
+      line-height: 1.55;
+    }
+    a { color: #1565C0; }
+    a:hover { color: #0d59b3; }
+    .point::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 10px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #1565C0;
+      box-shadow: 0 0 0 4px rgba(21, 101, 192, .14);
+    }
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 26px;
+      background: #0A0A0B;
+      border-radius: 14px;
+      z-index: 2;
+    }
+    .dp-overlay{position:fixed;inset:0;background:rgba(14,31,51,.55);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:20px;z-index:1000}
+    .dp-card{background:#fff;border:1px solid #DCE6F0;border-radius:16px;padding:32px 28px 28px;max-width:420px;width:100%;position:relative;box-shadow:0 30px 64px -24px rgba(13,59,102,.5);animation:dpIn .22s cubic-bezier(.2,.8,.2,1)}
+    @keyframes dpIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+    .dp-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:24px;line-height:1;color:#5b7088;cursor:pointer;padding:4px}
+    .dp-close:hover{color:#0E1F33}
+    .dp-title{font-family:'Newsreader',serif;font-weight:500;font-size:24px;letter-spacing:-.01em;margin-bottom:6px}
+    .dp-sub{font-size:13.5px;color:#5b7088;line-height:1.55;margin-bottom:22px;max-width:30em}
+    .dp-field{margin-bottom:16px}
+    .dp-field label{display:block;font:600 11px 'Inter';letter-spacing:.18em;text-transform:uppercase;color:#5b7088;margin-bottom:7px}
+    .dp-field input{width:100%;border:1px solid #DCE6F0;border-radius:12px;padding:13px 14px;font:500 15px 'Inter';color:#0E1F33;background:#fff}
+    .dp-field input:focus{outline:none;border-color:#1565C0;box-shadow:0 0 0 3px rgba(21,101,192,.12)}
+    .dp-field input:disabled{background:#f2f4f7;color:#5b7088;cursor:not-allowed}
+    .dp-tbd{display:flex;align-items:flex-start;gap:10px;border:1px solid #DCE6F0;border-radius:12px;padding:12px 14px;margin-bottom:14px;cursor:pointer;background:#E3EDFF}
+    .dp-tbd:hover{border-color:#1565C0}
+    .dp-tbd input{width:16px;height:16px;margin:2px 0 0;accent-color:#1565C0;flex:0 0 auto;cursor:pointer}
+    .dp-tbd span{font-size:13px;line-height:1.5;color:#0E1F33}
+    .dp-msg{font-size:12.5px;line-height:1.45;min-height:18px;margin:2px 0 18px}
+    .dp-msg.ok{color:#1565C0;font-weight:600}
+    .dp-msg.err{color:#c0392b;font-weight:600}
+    .dp-confirm{display:block;width:100%;text-align:center;background:#1565C0;color:#fff;border:none;font:700 15px 'Inter';padding:15px;border-radius:12px;cursor:pointer;text-decoration:none;box-shadow:0 4px 12px rgba(21,101,192,.28)}
+    .dp-confirm:hover{background:#0d59b3;color:#fff}
+    .dp-confirm.off{opacity:.45;cursor:not-allowed;box-shadow:none}
+  </style>
+</helmet>
+<div style="padding: 40px 28px 56px; width: 1234px; height: 1484px; box-sizing: border-box; max-width: none; max-height: none; flex-grow: 0; flex-shrink: 0; flex-basis: auto; position: relative">
+<div style="max-width: none; margin: 0 auto; position: absolute; left: 28px; top: 40px; width: 1178px; height: 1374px; box-sizing: border-box; max-height: none; min-width: 0; min-height: 0">
+
+  <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 34px">
+    <div style="font-family: 'Newsreader', Georgia, serif; font-size: 28px; font-weight: 500; letter-spacing: -.01em; color: #0E1F33">Weltify</div>
+    <div style="margin-left: auto; font-size: 12px; color: #5b7088">Contact · <a href="mailto:weltifyteam@gmail.com" style="color: #1565C0; text-decoration: none; font-weight: 600">weltifyteam@gmail.com</a></div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: start">
+    <div style="padding-top: 18px">
+      <h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 54px; font-weight: 500; line-height: 1.08; letter-spacing: -.02em">Your trusted <span style="color: #1565C0">local</span> to turn to<br>when you get sick in Tokyo.</h1>
+      <p style="margin: 20px 0 0; font-size: 18px; color: #5b7088; line-height: 1.6; max-width: 30em">Something AI and Google search can't give you<br>— but <strong style="color: #1565C0; font-weight: 700">a trusted Tokyo local</strong> can:</p>
+      <div style="display: flex; flex-direction: column; gap: 16px; margin: 28px 0 0; max-width: 31em">
+        <div class="point" style="position: relative; padding-left: 26px; font-size: 17px; color: #33475e; line-height: 1.6"><strong style="color: #0E1F33; font-weight: 700">The reassurance</strong> of having a trusted local behind you.</div>
+        
+      </div>
+      <div onClick="{{openModal}}" style="display: flex; align-items: center; gap: 18px; margin-top: 34px; cursor: pointer; width: fit-content">
+        <div style="width: 124px; height: 124px; flex-shrink: 0; background: #fff; border: 1px solid #DCE6F0; border-radius: 12px; padding: 8px"><img src="qr-register.png" alt="QR code to weltify.netlify.app registration" style="width: 100%; height: 100%; display: block; image-rendering: pixelated"></div>
+        <div>
+          
+          <div style="font-family: 'Newsreader', serif; font-size: 28px; font-weight: 500; letter-spacing: -.01em; margin-top: 2px">¥1,000 <span style="font-size: 13px; color: #5b7088; text-decoration: line-through; font-family: 'Newsreader', serif; font-weight: 500">¥5,000</span></div>
+          <div style="font-size: 12.5px; color: #5b7088">・First 50 people only — then ¥5,000.<br><span style="color: rgb(21, 101, 192); font-size: 12px; font-weight: 600">Dates not fixed yet? Lock your ¥1,000 spot now, tell your local the days later.</span></div>
+          <div style="font-size: 12px; color: #5b7088; margin-top: 4px">・Secure payment via Stripe.</div>
+          
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <div class="phone" style="width: 284px; height: 540px; background: #15151a; border-radius: 42px; padding: 11px; box-shadow: 0 30px 64px -24px rgba(13, 59, 102, .5), inset 0 0 0 2px #2A2A2C; position: relative; transform: rotate(-2deg)">
+        <div style="width: 100%; height: 100%; background: #F4F6FB; border-radius: 31px; overflow: hidden; display: flex; flex-direction: column">
+          <div style="height: 40px; display: flex; justify-content: space-between; align-items: center; padding: 14px 22px 4px; font: 600 12px 'Inter'; color: #0E1F33"><span>9:41</span><span>● ● ●</span></div>
+          <div style="padding: 8px 16px 12px; display: flex; align-items: center; gap: 10px; background: #075E54">
+            <div style="color: rgba(255, 255, 255, .85); font-size: 18px">‹</div>
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; color: #fff; font: 600 13px 'Inter'">S</div>
+            <div>
+              <div style="font: 700 13px 'Inter'; color: #fff">Shintaro · Weltify</div>
+              <div style="font-size: 10px; color: rgba(255, 255, 255, .65)">online</div>
+            </div>
+          </div>
+          <div style="flex: 1; padding: 12px 12px 8px; display: flex; flex-direction: column; gap: 6px; overflow: hidden; background: #ECE5DD">
+            <div style="max-width: 80%; padding: 8px 12px 14px; border-radius: 14px; font-size: 12px; line-height: 1.4; position: relative; background: #DCF8C6; color: #0E1F33; align-self: flex-end; border-top-right-radius: 4px">Hi — I have a fever, ~38.5°C, and bad stomach pain. What should I do?<span style="position: absolute; right: 8px; bottom: 3px; font-size: 8.5px; opacity: .55; color: #0E1F33">9:38</span></div>
+            <div style="max-width: 80%; padding: 8px 12px 14px; border-radius: 14px; font-size: 12px; line-height: 1.4; position: relative; background: #fff; color: #0E1F33; align-self: flex-start; border-top-left-radius: 4px">Sorry you're not feeling well. You're near Shibuya — I've got you.<span style="position: absolute; right: 8px; bottom: 3px; font-size: 8.5px; opacity: .55">9:38</span></div>
+            <div style="max-width: 80%; padding: 8px 12px 14px; border-radius: 14px; font-size: 12px; line-height: 1.4; position: relative; background: #fff; color: #0E1F33; align-self: flex-start; border-top-left-radius: 4px">There's a clinic 6 min walk away — Shibuya Family Clinic. Walk-ins welcome, English-speaking doctor until 6pm.<span style="position: absolute; right: 8px; bottom: 3px; font-size: 8.5px; opacity: .55">9:39</span></div>
+            <div style="max-width: 80%; padding: 8px 12px 14px; border-radius: 14px; font-size: 12px; line-height: 1.4; position: relative; background: #DCF8C6; color: #0E1F33; align-self: flex-end; border-top-right-radius: 4px">Thank you 🙏 going now<span style="position: absolute; right: 8px; bottom: 3px; font-size: 8.5px; opacity: .55; color: #0E1F33">9:40</span></div>
+            <div style="max-width: 80%; padding: 8px 12px 14px; border-radius: 14px; font-size: 12px; line-height: 1.4; position: relative; background: #fff; color: #0E1F33; align-self: flex-start; border-top-left-radius: 4px">I'll check in on you in 2 hours. You're not alone in this.<span style="position: absolute; right: 8px; bottom: 3px; font-size: 8.5px; opacity: .55">9:41</span></div>
+          </div>
+          <div style="padding: 8px 12px; display: flex; gap: 8px; align-items: center; background: #F4F6FB">
+            <div style="flex: 1; background: #fff; border: 1px solid #DCE6F0; border-radius: 999px; padding: 6px 12px; font-size: 11px; color: #5b7088">Message</div>
+            <div style="width: 26px; height: 26px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px">▸</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="text-align: center; font-size: 11px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: #5b7088; margin: 44px 0 28px">— How it works —</h2>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+    <div style="background: #fff; border: 1px solid #DCE6F0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column">
+      <div style="font: 600 11px 'Inter'; letter-spacing: .22em; color: #1565C0; text-transform: uppercase; margin-bottom: 12px">Step 01</div>
+      <h3 style="margin: 0 0 6px; font-family: 'Newsreader', serif; font-weight: 500; font-size: 19px">Register</h3>
+      <p style="margin: 0; color: #5b7088; font-size: 13.5px; line-height: 1.6">✔︎ Your real name<br>✔︎ The days you want support from a Tokyo local (up to 14 days)</p>
+      <p style="margin: 12px 0 0; color: #5b7088; font-size: 13.5px; line-height: 1.6; margin-top: auto; padding-top: 12px">Not sure of your dates yet? Register now and tell your local later.</p>
+    </div>
+    <div style="background: #fff; border: 1px solid #DCE6F0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column">
+      <div style="font: 600 11px 'Inter'; letter-spacing: .22em; color: #1565C0; text-transform: uppercase; margin-bottom: 12px">Step 02</div>
+      <h3 style="margin: 0 0 6px; font-family: 'Newsreader', serif; font-weight: 500; font-size: 19px">Meet your local on WhatsApp (or your preferred app)</h3>
+      <p style="margin: 0; color: #5b7088; font-size: 13.5px; line-height: 1.6">Your local is a real person living in Tokyo.</p>
+      <div style="background: #E3EDFF; border-radius: 12px; padding: 11px 14px; font-size: 12.5px; color: #22405f; margin-top: auto; line-height: 1.45">"Hi — I'm your Weltify local. I'll be with you throughout the registered period."</div>
+    </div>
+    <div style="background: #fff; border: 1px solid #DCE6F0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column">
+      <div style="font: 600 11px 'Inter'; letter-spacing: .22em; color: #1565C0; text-transform: uppercase; margin-bottom: 12px">Step 03</div>
+      <h3 style="margin: 0 0 6px; font-family: 'Newsreader', serif; font-weight: 500; font-size: 19px">Message them when you're sick</h3>
+      <p style="margin: 0; color: #5b7088; font-size: 13.5px; line-height: 1.6">Feeling sick? Message your local and they'll help you through chat.<br>They're available 7:00–22:00.</p>
+      <div style="background: #E3EDFF; border-radius: 12px; padding: 11px 14px; font-size: 12.5px; color: #22405f; margin-top: auto; line-height: 1.45">"Fever again? I'll find you the nearest clinic right away."</div>
+    </div>
+  </div>
+  
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 24px; align-items: stretch; position: relative">
+
+    <div style="background: #fff; border: 1px solid #DCE6F0; border-radius: 16px; padding: 28px 26px; display: flex; flex-direction: column; align-items: center; text-align: center">
+      <div style="font: 600 11px 'Inter'; letter-spacing: .2em; text-transform: uppercase; color: #5b7088; margin-bottom: 14px; align-self: flex-start">Start now</div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; margin: auto 0">
+        <div style="width: 150px; height: 150px; background: #fff; border: 1px solid #DCE6F0; border-radius: 10px; padding: 8px"><img src="qr-register.png" alt="QR code to weltify.netlify.app registration" style="width: 100%; height: 100%; display: block; image-rendering: pixelated"></div>
+        <div style="font-size: 16px; font-weight: 700; margin-top: 10px">Scan to register — ¥1,000</div>
+        <div style="font-size: 12px; color: #5b7088">Secure payment via Stripe.</div>
+      </div>
+    </div>
+
+    <div style="background: #fff; border: 1px solid #DCE6F0; border-radius: 16px; padding: 28px 26px; display: flex; flex-direction: column">
+      <div style="font: 600 11px 'Inter'; letter-spacing: .2em; text-transform: uppercase; color: #5b7088; margin-bottom: 14px">Pricing</div>
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2px; padding: 12px 14px; border: 1px solid #1565C0; border-radius: 12px; background: #E3EDFF; box-shadow: 0 4px 12px rgba(21, 101, 192, .16); text-align: center">
+        <div style="font: 600 11px 'Inter'; letter-spacing: .18em; text-transform: uppercase; color: #5b7088">Registration</div>
+        <div style="font-family: 'Newsreader', serif; font-size: 27px; font-weight: 500; letter-spacing: -.01em; margin-top: 0">¥1,000 <span style="font-size: 13px; color: #5b7088; text-decoration: line-through; font-family: 'Newsreader', serif; font-weight: 500">¥5,000</span></div>
+        <div style="font-size: 12.5px; color: #5b7088">First 50 people only — then ¥5,000</div>
+        
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2px; padding: 12px 14px; border: 1px solid #DCE6F0; border-radius: 12px; background: #E3EDFF; margin-top: 8px; text-align: center">
+        <div style="font: 600 11px 'Inter'; letter-spacing: .18em; text-transform: uppercase; color: #5b7088">additional fee</div>
+        <div style="font-family: 'Newsreader', serif; font-size: 27px; font-weight: 500; letter-spacing: -.01em; margin-top: 0">¥3,000 <span style="font-size: 13px; color: #5b7088; font-family: 'Newsreader', serif; font-weight: 500">each</span></div>
+        <div style="font-size: 12.5px; color: #5b7088">call &amp; book the clinic for you</div>
+      </div>
+      <div style="font-size: 12.5px; color: #1565C0; font-weight: 600; margin-top: 10px; padding-top: 10px; border-top: 1px solid #DCE6F0">✓ Dates not fixed yet? Lock your ¥1,000 spot now, tell your local the days later.<br>✓ Not happy? Full refund of your registration fee.</div>
+    </div>
+
+    
+
+    <div style="background: #fff; border: 1px solid #DCE6F0; border-radius: 16px; padding: 28px 26px; display: flex; flex-direction: column">
+      <div style="font: 600 11px 'Inter'; letter-spacing: .2em; text-transform: uppercase; color: #5b7088; margin-bottom: 14px">Who's behind it</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; margin: auto 0">
+        <div style="flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%; overflow: hidden; background: #DCE6F0"><img src="founder.jpg" alt="Shintaro Yasuda" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+        <div style="flex: 1; min-width: 0">
+          <div style="font: 600 11px 'Inter'; letter-spacing: .2em; text-transform: uppercase; color: #1565C0">Founder</div>
+          <div style="font-family: 'Newsreader', serif; font-size: 19px; font-weight: 500; margin-top: 2px">Shintaro Yasuda</div>
+          <div style="font-size: 12px; color: #33475e; line-height: 1.55; margin-top: 6px">University of Tokyo, Economics. Now at a global consulting firm. Fluent in English &amp; Japanese.</div>
+          <div style="font-size: 12px; color: #33475e; line-height: 1.55; margin-top: 6px">I fell ill alone in Berlin with no one to turn to. Weltify exists so no one in Tokyo faces the fear.</div>
+        </div>
+        <div style="display: flex; flex-direction: row; justify-content: center; gap: 16px; flex-basis: 100%; margin-top: 6px">
+          <a href="https://www.linkedin.com/in/shintaro-yasuda-6738602a9" target="_blank" rel="noopener" style="display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; flex-shrink: 0">
+            <img src="qr-linkedin.png" alt="LinkedIn QR" style="width: 56px; height: 56px; display: block; border: 1px solid #DCE6F0; border-radius: 4px; background: #fff; padding: 4px">
+            <span style="font: 600 9px 'Inter'; letter-spacing: .18em; text-transform: uppercase; color: #5b7088">LinkedIn</span>
+          </a>
+          <a href="https://www.facebook.com/people/Shintaro-Yasuda/pfbid0Kq7SeZ5fRyfVp5WEbqUqYkHd5ZvBPEmh7gBzBRvMXW8VehH7NNNPsQf4LMQ5Tchel/" target="_blank" rel="noopener" style="display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; flex-shrink: 0">
+            <img src="qr-facebook.png" alt="Facebook QR" style="width: 56px; height: 56px; display: block; border: 1px solid #DCE6F0; border-radius: 4px; background: #fff; padding: 4px">
+            <span style="font: 600 9px 'Inter'; letter-spacing: .18em; text-transform: uppercase; color: #5b7088">Facebook</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+<div class="dp-overlay" onClick="{{closeModal}}">
+  <div class="dp-card" onClick="{{stop}}">
+    <button class="dp-close" onClick="{{closeModal}}">×</button>
+    <div class="dp-title">Registration</div>
+    <p class="dp-sub">You can register <strong style="color:#1565C0;font-weight:700">up to 14 days</strong> of support. Dates not fixed yet? Lock your spot now and tell your local later.</p>
+    <div class="dp-field">
+      <label>First name</label>
+      <input type="text" placeholder="e.g. Maria" value="{{first}}" onChange="{{onFirst}}">
+    </div>
+    <div class="dp-field">
+      <label>Family name</label>
+      <input type="text" placeholder="e.g. Garcia" value="{{family}}" onChange="{{onFamily}}">
+    </div>
+    <div class="dp-field">
+      <label>Support starts</label>
+      <input type="date" value="{{start}}" disabled="{{tbd}}" onChange="{{onStart}}">
+    </div>
+    <div class="dp-field">
+      <label>Support ends</label>
+      <input type="date" value="{{end}}" disabled="{{tbd}}" onChange="{{onEnd}}">
+    </div>
+    <label class="dp-tbd">
+      <input type="checkbox" checked="{{tbd}}" onChange="{{onTbd}}">
+      <span>I don't know yet which days I'll want support — I'll tell my local once I do.</span>
+    </label>
+    <div class="dp-msg {{msgClass}}">{{msg}}</div>
+    <sc-if value="{{ready}}" hint-placeholder-val="{{ true }}">
+      <a class="dp-confirm" href="{{payUrl}}" target="_blank" rel="noopener">Continue to payment →</a>
+    </sc-if>
+    <sc-if value="{{notReady}}" hint-placeholder-val="{{ false }}">
+      <span class="dp-confirm off">Continue to payment →</span>
+    </sc-if>
+  </div>
+</div>
+</sc-if>
+<p style="font-size: 11px; color: #5b7088; line-height: 1.5; text-align: center; margin: 18px auto 0; max-width: 560px; position: absolute; left: 341px; top: 1479px">Your local is a regular Tokyo resident, not a doctor or medical professional. They don't give medical advice.<br>At first, the founder is your local. More trusted Tokyo locals are being added over time.</p></x-dc>
+
+<script data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { open: false, first: '', family: '', start: '', end: '', tbd: false };
+  }
+  ref() {
+    var st = this.state;
+    var name = (st.first.trim() + ' ' + st.family.trim()).trim();
+    var b64 = btoa(unescape(encodeURIComponent(name))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    var period = st.tbd ? 'DATESTBD-DATESTBD-' : (st.start.replace(/-/g, '') + '-' + st.end.replace(/-/g, '') + '-');
+    return period + b64;
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    var MAX_DAYS = 14;
+    var named = st.first.trim() !== '' && st.family.trim() !== '';
+    var msg = '', cls = '', ready = false;
+    if (st.tbd) {
+      if (named) { msg = '\u2713 Your spot is locked. Tell your local your dates any time \u2014 up to 14 days of support.'; cls = 'ok'; ready = true; }
+      else { msg = 'Please enter your first and family name.'; }
+    } else if (st.start !== '' && st.end !== '') {
+      var days = Math.round((new Date(st.end + 'T00:00') - new Date(st.start + 'T00:00')) / 86400000) + 1;
+      if (days < 1) { msg = 'The end day must be on or after the start.'; cls = 'err'; }
+      else if (days > MAX_DAYS) { msg = 'Up to 14 days. You picked ' + days + '.'; cls = 'err'; }
+      else if (!named) { msg = 'Please enter your first and family name.'; }
+      else { msg = '\u2713 ' + days + (days === 1 ? ' day' : ' days') + ' covered.'; cls = 'ok'; ready = true; }
+    }
+    return {
+      open: st.open, first: st.first, family: st.family, start: st.start, end: st.end, tbd: st.tbd,
+      msg: msg, msgClass: cls, ready: ready, notReady: !ready,
+      payUrl: 'https://buy.stripe.com/3cI8wP5Cl9c8gnCep74sE00?client_reference_id=' + this.ref(),
+      openModal: function () { self.setState({ open: true }); },
+      closeModal: function () { self.setState({ open: false }); },
+      stop: function (e) { e.stopPropagation(); },
+      onFirst: function (e) { self.setState({ first: e.target.value }); },
+      onFamily: function (e) { self.setState({ family: e.target.value }); },
+      onStart: function (e) { self.setState({ start: e.target.value }); },
+      onEnd: function (e) { self.setState({ end: e.target.value }); },
+      onTbd: function (e) {
+        var c = e.target.checked;
+        self.setState({ tbd: c, start: c ? '' : self.state.start, end: c ? '' : self.state.end });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
